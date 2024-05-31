@@ -12,7 +12,7 @@
 
 技术路线如下：
 
-部署文件/技术路线.png
+[部署文件/技术路线.png](https://github.com/xTEENx/JXT_XJ_robot/blob/d3dd23bcdbb9163e2062125ee0e188863fdeb50b/%E9%83%A8%E7%BD%B2%E6%96%87%E4%BB%B6/%E6%8A%80%E6%9C%AF%E8%B7%AF%E7%BA%BF.png)
 
 ## 项目进展
 
