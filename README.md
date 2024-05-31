@@ -76,7 +76,7 @@ $ python startup.py -a
 可以查看WEB UI 界面，注意，**每个电脑的端口设置不同**，请以运行结果出现的链接为主！
 如果在浏览器输入链接后出现如下界面，则说明项目运行无误：
 
-![展示图](.\展示图.png)
+[![展示图](.\展示图.png)](https://github.com/xTEENx/JXT_XJ_robot/blob/13c7f9b366bb6dafc5dafc6e276f5a238556d52e/%E9%83%A8%E7%BD%B2%E6%96%87%E4%BB%B6/%E5%B1%95%E7%A4%BA%E5%9B%BE.png)
 
 ## 云部署
 
@@ -90,9 +90,9 @@ $ python startup.py -a
 
 3、开机
 
-![镜像配置](.\开机.png)
+[![镜像配置](.\开机.png)](https://github.com/xTEENx/JXT_XJ_robot/blob/13c7f9b366bb6dafc5dafc6e276f5a238556d52e/%E9%83%A8%E7%BD%B2%E6%96%87%E4%BB%B6/%E9%95%9C%E5%83%8F%E9%85%8D%E7%BD%AE.png)
 
-![jupyter](.\jupyter.png)
+[![jupyter](.\jupyter.png)](https://github.com/xTEENx/JXT_XJ_robot/blob/13c7f9b366bb6dafc5dafc6e276f5a238556d52e/%E9%83%A8%E7%BD%B2%E6%96%87%E4%BB%B6/jupyter.png)
 
 4、打开终端
 
@@ -116,16 +116,16 @@ $  python startup.py -a
 
 企业用户
 
-![SSH](.\SSH.png)
+[![SSH](.\SSH.png)](https://github.com/xTEENx/JXT_XJ_robot/blob/13c7f9b366bb6dafc5dafc6e276f5a238556d52e/%E9%83%A8%E7%BD%B2%E6%96%87%E4%BB%B6/SSH.png)
 
 个人用户
 
 点击**自定义服务**
 
-![隧穿](.\隧穿.png)
+[![隧穿](.\隧穿.png)](https://github.com/xTEENx/JXT_XJ_robot/blob/13c7f9b366bb6dafc5dafc6e276f5a238556d52e/%E9%83%A8%E7%BD%B2%E6%96%87%E4%BB%B6/%E9%9A%A7%E7%A9%BF.png)
 
 >  根据操作方法建立隧道链接**ssh隧道**，按照官网教程操作即可运行服务
 
 运行如下图：
 
-![展示图](.\展示图.png)
+[![展示图](.\展示图.png)](https://github.com/xTEENx/JXT_XJ_robot/blob/13c7f9b366bb6dafc5dafc6e276f5a238556d52e/%E9%83%A8%E7%BD%B2%E6%96%87%E4%BB%B6/%E5%B1%95%E7%A4%BA%E5%9B%BE.png)
