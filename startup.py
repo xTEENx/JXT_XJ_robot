@@ -40,9 +40,9 @@ from typing import List, Dict
 
 VERSION = 2.0
 @deprecated(
-    since="0.3.0",
-    message="模型启动功能将于 Langchain-Chatchat 0.3.x重写,支持更多模式和加速启动，0.2.x中相关功能将废弃",
-    removal="0.3.0")
+    since="",
+    message="",
+    removal="")
 def create_controller_app(
         dispatch_method: str,
         log_level: str = "INFO",
@@ -62,24 +62,6 @@ def create_controller_app(
 
 
 def create_model_worker_app(log_level: str = "INFO", **kwargs) -> FastAPI:
-    """
-    kwargs包含的字段如下：
-    host:
-    port:
-    model_names:[`model_name`]
-    controller_address:
-    worker_address:
-
-    对于Langchain支持的模型：
-        langchain_model:True
-        不会使用fschat
-    对于online_api:
-        online_api:True
-        worker_class: `provider`
-    对于离线模型：
-        model_path: `model_name_or_path`,huggingface的repo-id或本地路径
-        device:`LLM_DEVICE`
-    """
     import fastchat.constants
     fastchat.constants.LOGDIR = LOG_PATH
     import argparse
@@ -129,18 +111,16 @@ def create_model_worker_app(log_level: str = "INFO", **kwargs) -> FastAPI:
             args.conv_template = None
             args.limit_worker_concurrency = 5
             args.no_register = False
-            args.num_gpus = 1  # vllm worker的切分是tensor并行，这里填写显卡的数量
+            args.num_gpus = 1
             args.engine_use_ray = False
             args.disable_log_requests = False
 
-            # 0.2.1 vllm后要加的参数, 但是这里不需要
             args.max_model_len = None
             args.revision = None
             args.quantization = None
             args.max_log_len = None
             args.tokenizer_revision = None
 
-            # 0.2.2 vllm需要新加的参数
             args.max_paddings = 256
 
             if args.model_path:
@@ -565,13 +545,7 @@ def dump_server_info(after_start=False, args=None):
     import fastchat
     from server.utils import api_address, webui_address
 
-    print("\n")
-    print("=" * 30 + "Langchain-Chatchat Configuration" + "=" * 30)
-    print(f"操作系统：{platform.platform()}.")
-    print(f"python版本：{sys.version}")
     print(f"项目版本：{VERSION}")
-    print(f"langchain版本：{langchain.__version__}. fastchat版本：{fastchat.__version__}")
-    print("\n")
 
     models = LLM_MODELS
     if args and args.model_name:
@@ -882,18 +856,3 @@ if __name__ == "__main__":
         asyncio.set_event_loop(loop)
 
     loop.run_until_complete(start_main_server())
-
-# 服务启动后接口调用示例：
-# import openai
-# openai.api_key = "EMPTY" # Not support yet
-# openai.api_base = "http://localhost:8888/v1"
-
-# model = "chatglm3-6b"
-
-# # create a chat completion
-# completion = openai.ChatCompletion.create(
-#   model=model,
-#   messages=[{"role": "user", "content": "Hello! What is your name?"}]
-# )
-# # print the completion
-# print(completion.choices[0].message.content)
